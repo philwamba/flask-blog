@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    {% if title %}
+    <title>Flask Blog | {{ title }}</title>
+    {% else %}
+    <title>Flask Blog</title>
+    {% endif %}
+    <link rel="shortcut icon" href="{{ url_for('static', filename='favicon.ico') }}" />
+    <!--Import Google Icon Font-->
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <!-- Compiled and minified CSS -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+    <link rel="stylesheet" href="{{ url_for('static', filename='main.css')}}">
+</head>
+
+<body>
+    <nav class="blue darken-4">
+        <div class="container">
+            <div class="nav-wrapper">
+                <a href="/" class="brand-logo">Flask Blog</a>
+                <a href="#" data-target="nav-mobile" class="sidenav-trigger"><i class="material-icons">menu</i></a>
+                <ul id="nav-mobile" class="right hide-on-med-and-down">
+                    <li><a href="/home">Home</a></li>
+                    <li><a href="/about">About</a></li>
+                    <li><a class="waves-effect waves-light blue btn">Login <i class="material-icons right">input</i></a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <section class="flow-text">
+        <div class="container">
+            <div class="row">
+                <div class="col m8 s12">
+                    {% block content %}
+                    {% endblock %}
+                </div>
+                <div class="col m4 s12">
+                    <div class="card white">
+                        <div class="card-content">
+                            <span class="card-title blue-text">Our Sidebar</span>
+                            <ul class="collection">
+                                <a href="#!" class="collection-item blue-text">Latest Posts</a>
+                                <a href="#!" class="collection-item blue-text">Announcements</a>
+                                <a href="#!" class="collection-item blue-text">Calendars</a>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+    <!-- Compiled and minified JavaScript -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+</body>
+
+</html>
